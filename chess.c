@@ -45,6 +45,13 @@ int queen(int x1, int y1, int x2, int y2) {
     }
 }
 
+int knight(int x1, int y1, int x2, int y2) {
+    if ((abs(x2-x1) == 2 && abs(y2-y1) == 1) || ((abs(x2-x1) == 1) && abs(y2-y1) == 2)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 int main() {
 
@@ -74,6 +81,7 @@ int main() {
     printf("Угрожает слон %s\n", bishop(x1,y1,x2,y2) ? "Да" : "Нет");
     printf("Угрожает король %s\n", king(x1,y1,x2,y2) ? "Да" : "Нет");
     printf("Угрожает ферзь %s\n", queen(x1,y1,x2,y2) ? "Да" : "Нет");
+    printf("Угрожает конь %s\n", knight(x1,y1,x2,y2) ? "Да" : "Нет");
 
     return 0;
 }
